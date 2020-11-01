@@ -17,7 +17,7 @@ def txt_to_df(txt_path):
     Args:
         txt_path: The path for the saved file containing
             the tweet data in json format
-    
+
     Returns:
         A DataFrame containing just the raw tweet texts
     """
@@ -64,4 +64,3 @@ def ext_rt(row):
             return row["long_text"]
     except:
         return row["long_text"]
-
