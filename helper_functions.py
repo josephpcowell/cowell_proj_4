@@ -40,8 +40,11 @@ def txt_to_df(txt_path):
         tweet["long_text"] = tweet.apply(ext_rt, axis=1)
         return tweet[["long_text"]]
     except:
-        tweet[["long_text"]] = tweet[["full_text"]]
-        return tweet[["long_text"]]
+        try:
+            tweet["long_text"] = tweet.apply(ext_rt2, axis=1)
+            return tweet[["long_text"]]
+        except:
+            return tweet[["long_text"]]
 
 
 def ext_tweets(row):
@@ -72,6 +75,16 @@ def ext_rt(row):
         return row["long_text"]
 
 
+def ext_rt2(row):
+    try:
+        if type(row["retweeted_status"]) == dict:
+            return row["retweeted_status"]["full_text"]
+        else:
+            return row["full_text"]
+    except:
+        return row["full_text"]
+
+
 # OLD FUNCTION IN CASE NEW ONE HAS BUGS
 # def txt_to_df(txt_path=None, list_data=None):
 #     """
@@ -100,3 +113,38 @@ def ext_rt(row):
 #     tweet["long_text"] = tweet.apply(ext_tweets, axis=1)
 #     tweet["long_text"] = tweet.apply(ext_rt, axis=1)
 #     return tweet[["long_text"]]
+
+# ANOTHER RENDITION TO SAVE JUST IN CASE
+# def txt_to_df(txt_path):
+#     """
+#     Powerhouse function to take raw scraped twitter data
+#     into a DataFrame of just the tweet texts
+
+#     Args:
+#         txt_path: The path for the saved file containing
+#             the tweet data in json format
+
+#     Returns:
+#         A DataFrame containing just the raw tweet texts
+#     """
+#     path = txt_path
+#     tweets_file = open(path, "r")
+#     tweets_data = []
+#     for line in tweets_file:
+#         try:
+#             tweet = json.loads(line)
+#             tweets_data.append(tweet)
+#         except:
+#             continue
+#     tweet = pd.DataFrame(tweets_data)
+#     tweet = tweet[tweet["lang"] == "en"]
+#     try:
+#         tweet = tweet[
+#             ["text", "truncated", "extended_tweet", "retweeted_status"]
+#         ]
+#         tweet["long_text"] = tweet.apply(ext_tweets, axis=1)
+#         tweet["long_text"] = tweet.apply(ext_rt, axis=1)
+#         return tweet[["long_text"]]
+#     except:
+#         tweet[["long_text"]] = tweet[["full_text"]]
+#         return tweet[["long_text"]]
