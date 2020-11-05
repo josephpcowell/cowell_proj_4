@@ -47,6 +47,22 @@ def txt_to_df(txt_path):
             return tweet[["long_text"]]
 
 
+def snscrape_to_df(txt_path):
+    path = txt_path
+    tweets_file = open(path, "r")
+    tweets_data = []
+    for line in tweets_file:
+        try:
+            tweet = json.loads(line)
+            tweets_data.append(tweet)
+        except:
+            continue
+    tweet = pd.DataFrame(tweets_data)
+    tweet = tweet[tweet["lang"] == "en"]
+    tweet["long_text"] = tweet["content"]
+    return tweet[["long_text"]]
+
+
 def ext_tweets(row):
     """
     Helper function to determined truncated tweets and
@@ -76,6 +92,17 @@ def ext_rt(row):
 
 
 def ext_rt2(row):
+    try:
+        if type(row["retweeted_status"]) == dict:
+            return row["retweeted_status"]["full_text"]
+        else:
+            return row["full_text"]
+    except:
+        return row["full_text"]
+
+
+def ext_rt2(row):
+    return row[""]
     try:
         if type(row["retweeted_status"]) == dict:
             return row["retweeted_status"]["full_text"]
