@@ -33,7 +33,7 @@ def txt_to_df(txt_path):
     tweet = pd.DataFrame(tweets_data)
     tweet = tweet[tweet["lang"] == "en"]
     try:
-        tweet = tweet[["full_text","created_at","retweeted_status",]]
+        tweet = tweet[["full_text","created_at","retweeted_status"]]
         tweet["long_text"] = tweet["full_text"]
         tweet["long_text"] = tweet.apply(ext_rt, axis=1)
         tweet["year"] = pd.to_datetime(tweet["created_at"])
