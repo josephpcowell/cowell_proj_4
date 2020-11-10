@@ -18,4 +18,4 @@ search_results = api.search(q="vegan", count=100)
 # Set max tweets
 # Set search information
 snscrape --jsonl --max-results 5000 twitter-search "#vegan since:2016-08-01 until:2016-10-01" > tw2016.txt
-snscrape --jsonl --max-results 5000 twitter-search "#vegan since:2020-08-01 until:2020-10-01" > tw2020.txt
+snscrape --jsonl --max-results 8000 twitter-search "#vegan since:2019-06-01 until:2019-08-01" > Data/t2w2019.txt
