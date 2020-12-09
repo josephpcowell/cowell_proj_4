@@ -9,7 +9,9 @@ All of the .txt files contain the tweets used in this project
 Python files containing functions and classes used throughout the project and notebooks
 - [/Images](/Images)<br>
 Important images used in the analysis and presentation
-- [Presentation Slide Deck](vega_tweets.pdf)<br>
+- [Presentation Slide Deck](vegan_tweets.pdf)<br>
+
+Extras: Read the [blog](https://towardsdatascience.com/machine-learning-and-veganism-2a1e03e0b262) post.
 
 ## Description
 This project uses NLP to explore the conversation about veganism on Twitter. Over 60,000 tweets were collected and grouped into topics to determine trends in the vegan world. Everything I used is included in this repository for further exploration and insight.
