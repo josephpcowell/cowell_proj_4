@@ -9,7 +9,9 @@ All of the .txt files contain the tweets used in this project
 Python files containing functions and classes used throughout the project and notebooks
 - [/Images](/Images)<br>
 Important images used in the analysis and presentation
-- [Presentation Slide Deck](vega_tweets.pdf)<br>
+- [Presentation Slide Deck](vegan_tweets.pdf)<br>
+
+Extras: Read the [blog](https://towardsdatascience.com/machine-learning-and-veganism-2a1e03e0b262) post.
 
 ## Description
 This project uses NLP to explore the conversation about veganism on Twitter. Over 60,000 tweets were collected and grouped into topics to determine trends in the vegan world. Everything I used is included in this repository for further exploration and insight.
@@ -42,5 +44,8 @@ Animal Activism
 
 ## Potential Impact & Use
 This repository is good for those looking into scraping Twitter and then turning that scraped data into insights. In regards to the insights pulled from this exploration, trends are moving towards animal activism and 'fake' foods. Companies can take note that 'fake' foods are hot and worth looking into for investment and even 'fake' food companies can know that their marketing efforts are working.
+<<<<<<< HEAD
 
 ![alt text](Images/small_scale.png)
+=======
+>>>>>>> 714fb4c72177d6c009c055896551ab20db713cc1
