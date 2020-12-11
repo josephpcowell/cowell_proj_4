@@ -44,8 +44,5 @@ Animal Activism
 
 ## Potential Impact & Use
 This repository is good for those looking into scraping Twitter and then turning that scraped data into insights. In regards to the insights pulled from this exploration, trends are moving towards animal activism and 'fake' foods. Companies can take note that 'fake' foods are hot and worth looking into for investment and even 'fake' food companies can know that their marketing efforts are working.
-<<<<<<< HEAD
 
 ![alt text](Images/small_scale.png)
-=======
->>>>>>> 714fb4c72177d6c009c055896551ab20db713cc1
